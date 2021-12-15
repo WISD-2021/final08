@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use app\Models\Order;
 
 class Employee extends Model
 {
@@ -13,6 +14,10 @@ class Employee extends Model
         'acc',
         'pass',
         'name',
-        'mail',
+        'mail'
     ];
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }
