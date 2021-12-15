@@ -14,7 +14,7 @@ class CreateRecordsTable extends Migration
     public function up()
     {
         Schema::create('records', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id',11);
             $table -> integer('customer_id');
             $table -> integer('cart_item_id');
             $table->timestamps();
