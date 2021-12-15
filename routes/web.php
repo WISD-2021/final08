@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\EmployeeController;
 use app\Http\Controllers\OrderController;
-
+use app\Http\Controllers\CustomerController;
+use app\Http\Controllers\RecordsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::resource('employees',EmployeeController::class);
 
 Route::resource('orders', OrderController::class);
+
+Route::resource('customers',CustomerController::class);
+
+Route::resource('records',RecordsController::class);
