@@ -32,6 +32,6 @@ Route::resource('customers',CustomerController::class);
 
 Route::resource('records',RecordsController::class);
 
-Route::resource('cart_items',\App\Http\Controllers\CartItemController::class);
+Route::resource('cart_items',CartItemController::class);
 
-Route::resources('products',\App\Http\Controllers\ProductController::class);
+Route::resources('products',ProductController::class);
