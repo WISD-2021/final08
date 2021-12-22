@@ -31,3 +31,7 @@ Route::resource('orders', OrderController::class);
 Route::resource('customers',CustomerController::class);
 
 Route::resource('records',RecordsController::class);
+
+Route::resource('cart_items',\App\Http\Controllers\CartItemController::class);
+
+Route::resources('products',\App\Http\Controllers\ProductController::class);
