@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Cart_item;
+use App\Models\Cart_item;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
