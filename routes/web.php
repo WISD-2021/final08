@@ -5,6 +5,8 @@ use app\Http\Controllers\EmployeeController;
 use app\Http\Controllers\OrderController;
 use app\Http\Controllers\CustomerController;
 use app\Http\Controllers\RecordsController;
+use app\Http\Controllers\CartItemController;
+use app\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,6 @@ use app\Http\Controllers\RecordsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,4 +35,4 @@ Route::resource('records',RecordsController::class);
 
 Route::resource('cart_items',CartItemController::class);
 
-Route::resources('products',ProductController::class);
+Route::resource('products',ProductController::class);
