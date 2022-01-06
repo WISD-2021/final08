@@ -18,29 +18,29 @@
         div[class="carousel-inner"]>
         (div[class="item"]>img[src="pic/photo.jpg"]+div[class="carousel-caption"]>h1)*3
         -->
-        <div class="carousel-inner">
+        <div class="carousel-inner ">
             <div class="item active">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/ps5.png') }}" alt=""  class="img-responsive center-block">
+                    <img src="{{ asset('img/graphics card.jpg') }}" alt=""  class="img-responsive center-block" >
                 </a>
                 <div class="carousel-caption">
-                    <h1>PlayStation®5</h1>
+                    <h1>GRAPHICS CARD</h1>
                 </div>
             </div>
             <div class="item">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/xbox.jpg') }}" alt=""  class="img-responsive center-block">
+                    <img src="{{ asset('img/memory.jpg') }}" alt=""  class="img-responsive center-block">
                 </a>
                 <div class="carousel-caption">
-                    <h1>XBOX SERIES X</h1>
+                    <h1>MEMORY</h1>
                 </div>
             </div>
             <div class="item">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/switch.jpg') }}" alt=""  class="img-responsive center-block">
+                    <img src="{{ asset('img/CPU.jpg') }}" alt=""  class="img-responsive center-block">
                 </a>
                 <div class="carousel-caption">
-                    <h1></h1>
+                    <h1>CPU</h1>
                 </div>
             </div>
         </div>
@@ -59,26 +59,22 @@
     <!--主機圖片和名稱-->
     <td class="warp">
         <div class="img01">
-            <p class="text01">PS5</p>
+            <p class="text01">顯示卡</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/ps5.png') }}" >
+                <img src="{{ asset('img/graphics card.jpg') }}" width="300px" height="300px">
             </a>
         </div>
         <div class="img02">
-            <p class="text01">XBOX SERIES X</p>
+            <p class="text01">記憶體</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/xbox.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/memory.jpg') }}" width="300px" height="300px">
             </a>
         </div>
         <div class="img03">
-            <p class="text01">Nintendo Switch</p>
+            <p class="text01">CPU</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/switch.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/CPU.jpg') }}" width="300px" height="300px">
             </a>
         </div>
     </td>
-
-    <div class="wrap">
-    </div>
-
 @endsection
