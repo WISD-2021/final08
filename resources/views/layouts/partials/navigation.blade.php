@@ -17,12 +17,14 @@
                     <a href="{{ url('/') }}">首頁</a>
                 </li>
                 <li>
-                    <div class="search">
-                        <div class="from-group has-feedback">
-                            <input type="search" name="search" class="form-control" placeholder="搜尋產品">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    <form action="/search" role="search" method="GET">
+                        <div class="search">
+                            <div class="from-group has-feedback">
+                                <input type="search" name="search" class="form-control" placeholder="搜尋產品">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </li>
                 @if (Auth::guest())
                     <li>
@@ -35,13 +37,13 @@
                     </li>
                 @else
                     <li>
-                        <a href="{{ route('home') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
+                        <a href="{{ route('home.index') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
                     </li>
                     <li>
-                        <a href="{{ route('home') }}" class="glyphicon glyphicon-user">個人資料</a>
+                        <a href="{{ route('home.index') }}" class="glyphicon glyphicon-user">個人資料</a>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}" class="glyphicon glyphicon-log-out">登出</a>
+                        <a href="{{ route('home.logout') }}" class="glyphicon glyphicon-log-out">登出</a>
                     </li>
                     <p class="navbar-text">歡迎，使用者{{ Auth::user()->name }}</p>
                 @endif

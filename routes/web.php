@@ -28,10 +28,12 @@ Route::get('/', function () {
 
 //主樣板
 Route::prefix('home')->group(function () {
-    Route::get('/home',[HomeController::class, "index"])->name("home");
-    Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
+    Route::get('/',[HomeController::class, "index"])->name("home.index");
+    Route::get('logout',[HomeController::class, 'logout'])->name('home.logout');
+
 });
 
+Route::get('search',[ProductController::class, "index"])->name("search");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
