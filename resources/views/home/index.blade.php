@@ -21,7 +21,7 @@
         <div class="carousel-inner ">
             <div class="item active">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/graphics card.jpg') }}" alt=""  class="img-responsive center-block" >
+                    <img src="{{ asset('img/graphics-card.jpg') }}" alt=""  class="img-responsive center-block" >
                 </a>
                 <div class="carousel-caption">
                     <h1>GRAPHICS CARD</h1>
@@ -61,7 +61,7 @@
         <div class="img01">
             <p class="text01">顯示卡</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/graphics card.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/graphics-card.jpg') }}" width="300px" height="300px">
             </a>
         </div>
         <div class="img02">
@@ -77,4 +77,6 @@
             </a>
         </div>
     </td>
+    <div class="wrap">
+    </div>
 @endsection
