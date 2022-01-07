@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\EmployeeController;
-use app\Http\Controllers\OrderController;
-use app\Http\Controllers\CustomerController;
-use app\Http\Controllers\RecordsController;
-use app\Http\Controllers\CartItemController;
-use app\Http\Controllers\ProductController;
+
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\RecordsController;
+use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +23,10 @@ use App\Http\Controllers\AdminPostsController;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
+
+Route::get('/home',[HomeController::class, "index"])->name("home");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -39,6 +44,8 @@ Route::resource('cart_items',CartItemController::class);
 
 Route::resource('products',ProductController::class);
 
+Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
+
 //後台
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
@@ -49,3 +56,4 @@ Route::prefix('admin')->group(function () {
     Route::patch('posts/{post}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
     Route::delete('posts/{post}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
 });
+
