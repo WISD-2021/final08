@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return redirect('/');
+        //
     }
 
     /**
@@ -83,6 +83,12 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public  function search(Request $request)
+    {
+
+        return view('products.search');
     }
 
 }

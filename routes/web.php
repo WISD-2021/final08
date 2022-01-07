@@ -33,7 +33,7 @@ Route::prefix('home')->group(function () {
 
 });
 
-Route::get('search',[ProductController::class, "index"])->name("search");
+Route::get('search',[ProductController::class, "search"])->name("search");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -18,6 +18,8 @@
                 </li>
                 <li>
                     <form action="/search" role="search" method="GET">
+                        @method('GET')
+                        @csrf
                         <div class="search">
                             <div class="from-group has-feedback">
                                 <input type="search" name="search" class="form-control" placeholder="搜尋產品">
