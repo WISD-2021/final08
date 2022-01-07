@@ -41,7 +41,7 @@
 
     <div class="container">
         <div class="row">
-            <p class="text">搜尋結果($num)</p>
+            <p class="text">搜尋結果({{ $records }})</p>
         </div>
         <div class="row">
             <br><br><br><br><br><br><br>
@@ -55,72 +55,26 @@
             </form>
             <p class="text02">
                 共
-                <font color="blue">$num</font>
+                <font color="blue">{{ $records }}</font>
                 件產品
             </p>
             <hr>
         </div>
         <div class="row">
+            @foreach($searches as $search)
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="ps5-02.jpg">
+                    <img src="{{ asset('img/products/GTX-1650.jpg') }}">
                     <div class="caption" align="center">
-                        <h3>PlayStation®5 主機</h3>
-                        <p>釋放您從未預見的全新遊戲可能</p>
-                        <button type="submit" name="ps5" class="product">
+                        <h3>{{ $search->name }} </h3>
+                        <p>{{ $search->detail }}</p>
+                        <button type="submit" name="product" class="product">
                             查看產品
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="xbox-02.png">
-                    <div class="caption" align="center">
-                        <h3>Xbox Series X 主機</h3>
-                        <p>有史以來最快、最強大的XBOX</p>
-                        <button type="submit" name="xbox" class="product" >
-                            查看產品
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="switch-02.jpg">
-                    <div class="caption" align="center">
-                        <h3>Nintendo Switch 主機</h3>
-                        <p>一台可配合不同場合而改變形態的遊戲機，隨時隨地自由享樂</p>
-                        <button type="submit" name="switch" class="product" >
-                            查看產品
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="3ds.jpg">
-                    <div class="caption" align="center">
-                        <h3>Nintendo 3DS 主機</h3>
-                        <p>已停產</p>
-                        <button type="button" class="product">
-                            缺貨中...
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="psv.jpg">
-                    <div class="caption" align="center">
-                        <h3>PSVita 主機</h3>
-                        <p>已停產</p>
-                        <button type="button" class="product">
-                            缺貨中...
-                        </button>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
