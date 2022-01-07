@@ -26,7 +26,12 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-Route::get('/home',[HomeController::class, "index"])->name("home");
+//主樣板
+Route::prefix('home')->group(function () {
+    Route::get('/home',[HomeController::class, "index"])->name("home");
+    Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
+});
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -43,8 +48,6 @@ Route::resource('records',RecordsController::class);
 Route::resource('cart_items',CartItemController::class);
 
 Route::resource('products',ProductController::class);
-
-Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
 
 //後台
 Route::prefix('admin')->group(function () {
