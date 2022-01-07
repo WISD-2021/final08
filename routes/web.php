@@ -7,6 +7,8 @@ use app\Http\Controllers\CustomerController;
 use app\Http\Controllers\RecordsController;
 use app\Http\Controllers\CartItemController;
 use app\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminPostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +38,14 @@ Route::resource('records',RecordsController::class);
 Route::resource('cart_items',CartItemController::class);
 
 Route::resource('products',ProductController::class);
+
+//後台
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
+    Route::get('posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');
+    Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
+    Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+    Route::post('posts', [AdminPostsController::class, 'store'])->name('admin.posts.store');
+    Route::patch('posts/{post}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
+    Route::delete('posts/{post}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
+});
