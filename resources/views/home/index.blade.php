@@ -3,20 +3,6 @@
 @section('title','首頁')
 
 <head>
-    <meta charset="UTF-8">
-    <!--以IE瀏覽器相容模式來顯示，預設為微軟最新的edge瀏覽器模式來顯示網頁-->
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <!--網頁寬度設定為行動裝置的螢幕寬度且縮放比例為1:1-->
-    <meta name="viewport" content="width-device-width, initial-scale-1">
-    <title>首頁</title>
-    <!--Bootstrap 核心 CSS 檔案-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--Bootstrap 佈景主題 CSS 檔案-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <!--jquery 的核心檔案-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!--Bootstrap 核心 js 檔案-->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         /*顯示卡圖片樣式*/
         .img01{
