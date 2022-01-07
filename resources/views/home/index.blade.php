@@ -78,7 +78,7 @@
         <div class="carousel-inner ">
             <div class="item active">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/graphics-card.jpg') }}" alt=""  class="img-responsive center-block" >
+                    <img src="{{ asset('img/home/graphics-card.jpg') }}" alt=""  class="img-responsive center-block" >
                 </a>
                 <div class="carousel-caption">
                     <h1>GRAPHICS CARD</h1>
@@ -86,7 +86,7 @@
             </div>
             <div class="item">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/memory.jpg') }}" alt=""  class="img-responsive center-block">
+                    <img src="{{ asset('img/home/memory.jpg') }}" alt=""  class="img-responsive center-block">
                 </a>
                 <div class="carousel-caption">
                     <h1>MEMORY</h1>
@@ -94,7 +94,7 @@
             </div>
             <div class="item">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/CPU.jpg') }}" alt=""  class="img-responsive center-block">
+                    <img src="{{ asset('img/home/CPU.jpg') }}" alt=""  class="img-responsive center-block">
                 </a>
                 <div class="carousel-caption">
                     <h1>CPU</h1>
@@ -118,19 +118,19 @@
         <div class="img01">
             <p class="text01">顯示卡</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/graphics-card.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/home/graphics-card.jpg') }}" width="300px" height="300px">
             </a>
         </div>
         <div class="img02">
             <p class="text01">記憶體</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/memory.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/home/memory.jpg') }}" width="300px" height="300px">
             </a>
         </div>
         <div class="img03">
             <p class="text01">CPU</p>
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/CPU.jpg') }}" width="300px" height="300px">
+                <img src="{{ asset('img/home/CPU.jpg') }}" width="300px" height="300px">
             </a>
         </div>
     </td>
