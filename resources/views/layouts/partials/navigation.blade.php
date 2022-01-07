@@ -26,7 +26,7 @@
                 </li>
                 @if (Auth::guest())
                     <li>
-                        <a href="{{ route('login') }}" class="glyphicon glyphicon-user">登入</a>
+                        <a href="{{ route('login') }}" class="glyphicon glyphicon-log-in">登入</a>
                     </li>
                     <li>
                         @if (Route::has('register'))
@@ -38,7 +38,10 @@
                         <a href="{{ route('home') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}" class="glyphicon glyphicon-user">登出</a>
+                        <a href="{{ route('home') }}" class="glyphicon glyphicon-user">個人資料</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}" class="glyphicon glyphicon-log-out">登出</a>
                     </li>
                     <p class="navbar-text">歡迎，使用者{{ Auth::user()->name }}</p>
                 @endif
