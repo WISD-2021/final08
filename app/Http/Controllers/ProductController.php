@@ -6,7 +6,6 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
 
 class ProductController extends Controller
 {
@@ -17,9 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::orderBy('created_at', 'ASC')->get();
-        $data=['products'=>$products];
-        return view('admin.posts.index', $data);
+        //
     }
 
     /**
@@ -29,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        //
     }
 
     /**
@@ -40,8 +37,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        Product::create($request->all());
-        return redirect()->route('admin.posts.index');
+        //
     }
 
     /**
@@ -64,37 +60,32 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $products=Product::find($id);
-        $data=['post'=>$products];
-        return view('admin.posts.edit',$data);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateProductRequest  $request
-     * @param  \App\Models\Product  $products
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        $products=Product::find($id);
-        $products->update($request->all());
-        return redirect()->route('admin.posts.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $products
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $id)
+    public function destroy(Product $product)
     {
-        Product::destroy($id);
-        return redirect()->route('admin.posts.index');
+        //
     }
 
     public function search(Request $request)
