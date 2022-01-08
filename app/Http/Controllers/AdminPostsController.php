@@ -8,9 +8,9 @@ class AdminPostsController extends Controller
 {
     public function index()
     {
-        $posts=Product::orderBy('created_at','DESC') -> get();
-        $data=['posts'=>$posts];
-        return view('admin.posts.index',$data);
+        $products=Product::orderBy('created_at', 'ASC')->get();
+        $data=['products'=>$products];
+        return view('admin.posts.index', $data);
     }
 
     public function create()
@@ -19,26 +19,26 @@ class AdminPostsController extends Controller
     }
     public function store(PostRequest $request)
     {
-        Product::create($request -> all());
-        return redirect() ->route('admin.posts.index');
+        Product::create($request->all());
+        return redirect()->route('admin.posts.index');
     }
     public function edit ($id)
     {
-        $post=Product::find($id);
-        $data=['post'=>$post];
+        $products=Product::find($id);
+        $data=['post'=>$products];
         return view('admin.posts.edit',$data);
     }
 
     public function update(PostRequest $request,$id)
     {
-        $post=Product::find($id);
-        $post -> update($request -> all());
+        $products=Product::find($id);
+        $products->update($request->all());
         return redirect()->route('admin.posts.index');
     }
     public function destroy($id)
     {
         Product::destroy($id);
-        return redirect()-> route('admin.posts.index');
+        return redirect()->route('admin.posts.index');
     }
 
 }

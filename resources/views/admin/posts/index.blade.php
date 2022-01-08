@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', '管理員管理')
+@section('title','管理員管理')
 
 @section('content')
     <!-- Page Heading -->
@@ -32,23 +32,32 @@
                     <thead>
                     <tr>
                         <th width="30" style="text-align: center">#</th>
-                        <th>標題</th>
-                        <th width="70" style="text-align: center">精選？</th>
-                        <th width="100" style="text-align: center">功能</th>
+                        <th width="200" style="text-align: center">商品名稱</th>
+                        <th width="200" style="text-align: center">數量</th>
+                        <th width="200" style="text-align: center">價格</th>
+                        <th width="600" style="text-align: center">內容</th>
+                        <th width="200" style="text-align: center">商品圖片</th>
+                        <th width="200" style="text-align: center">修改商品</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($posts as $post)
+                    @foreach($products as $product)
                         <tr>
                             <td style="text-align: center">
-                                {{$post ->id}}</td>
-                            <td>{{$post ->title}}</td>
+                                {{$product ->id}}</td>
+                            <td>{{$product ->name}}</td>
                             <td style="text-align: center">
-                                {{($post ->is_feature)?'v':'x'}}</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">編輯</a>
+                                {{$product ->invent}}</td>
+                            <td style="text-align: center">
+                                {{$product->price}}</td>
+                            <td style="text-align: center">
+                                {{$product->detail}}</td>
+                            <td style="text-align: center">
+                                {{$product->photo}}</td>
+                            <td style="text-align: center">
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $product->id) }}">編輯</a>
                                 /
-                                <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" style="display: inline">
+                                <form action="{{ route('admin.posts.destroy', $product->id) }}" method="POST" style="display: inline">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-sm btn-danger" type="submit">刪除</button>

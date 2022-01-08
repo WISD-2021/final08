@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', '新增管理員')
+@section('title', '新增商品')
 
 @section('content')
 
@@ -20,36 +20,37 @@
     <!-- /.row -->
     @include('admin.layouts.partials.validation')
     <!-- /.row -->
-
     <div class="row">
         <div class="col-lg-12">
-            <form action="/admin/posts" method="POST" role="form">
-                @method('POST')
-                @csrf
+        <form action="/admin/posts" method="POST" role="form">
+            {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="title">標題：</label>
-                    <input id="title" name="title" class="form-control" value="{{ old('title') }}" placeholder="請輸入商品名稱">
-                </div>
-
-                <div class="form-group">
-                    <label for="content">內容：</label>
-                    <textarea id="content" name="content" class="form-control" rows="10">{{ old('content') }}</textarea>
+                    <label>商品名稱：</label>
+                    <input name="name" class="form-control" placeholder="請輸入商品名稱" value="{{$product->name}}">
                 </div>
                 <div class="form-group">
-                    <label for="is_feature">精選？</label>
-                    <select id="is_feature" name="is_feature" class="form-control">
-                        <option value="0">否</option>
-                        <option value="1">是</option>
-                    </select>
+                    <label>商品數量：</label>
+                    <input name="invent" class="form-control" placeholder="請輸入商品數量" value="{{$product->invent}}">
+                </div>
+                <div class="form-group">
+                    <label>商品價格：</label>
+                    <input name="price" class="form-control" placeholder="請輸入商品價格" value="{{$product->price}}">
+                </div>
+                <div class="form-group">
+                    <label>商品內容：</label>
+                    <input name="detail" class="form-control" placeholder="請輸入商品內容" value="{{$product->detail}}">
+                </div>
+                <div class="form-group">
+                    <label>圖片：</label>
+                    <input name="photo" class="form-control" value="{{$product->photo}}">
                 </div>
                 <div class="text-right">
-                    <button type="submit" class="btn btn-success">新增</button>
+                    <button type="submit" class="btn btn-success" style="background-color: #6f42c1;border-color: #6f42c1">建立</button>
                 </div>
 
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
             </form>
         </div>
     </div>
