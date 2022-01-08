@@ -17,6 +17,7 @@ class Product extends Model
         'invent',
         'price',
         'detail',
+        'photo',
     ];
 
     public function cart_items()
