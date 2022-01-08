@@ -41,7 +41,7 @@
 
     <div class="container">
         <div class="row">
-            <p class="text">搜尋結果({{ $records }})</p>
+            <p class="text">搜尋結果({{ $searchrecords }})</p>
         </div>
         <div class="row">
             <br><br><br><br><br><br><br>
@@ -55,7 +55,7 @@
             </form>
             <p class="text02">
                 共
-                <font color="blue">{{ $records }}</font>
+                <font color="blue">{{ $searchrecords }}</font>
                 件產品
             </p>
             <hr>
