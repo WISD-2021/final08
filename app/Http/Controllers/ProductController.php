@@ -89,10 +89,10 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $searchtext = $request->search;
-        $searchrecords = Product::where('name','like','%'.$searchtext.'%')->count();
-        $searches = Product::orderby('price','DESC')->where('name','like','%'.$searchtext.'%')->get();
-        $data = ['searches' => $searches, 'searchrecords' => $searchrecords];
+        $search_text = $request->search;
+        $search_records = Product::where('name','like','%'.$search_text.'%')->count();
+        $searches = Product::orderby('price','DESC')->where('name','like','%'.$search_text.'%')->get();
+        $data = ['searches' => $searches, 'search_records' => $search_records];
         return view('products.search',$data);
     }
 
