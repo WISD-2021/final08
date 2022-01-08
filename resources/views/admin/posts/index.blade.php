@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                管理員管理 <small>所有管理員</small>
+                商品管理 <small>所有商品</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-edit"></i> 管理員管理
+                    <i class="fa fa-edit"></i> 商品管理
                 </li>
             </ol>
         </div>
@@ -20,7 +20,7 @@
 
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="{{ route('admin.posts.create') }}" class="btn btn-success">建立管理員</a>
+            <a href="{{ route('admin.posts.create') }}" class="btn btn-success">建立商品</a>
         </div>
     </div>
     <!-- /.row -->

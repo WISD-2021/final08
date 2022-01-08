@@ -26,7 +26,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="{{ route('admin.dashboard.index') }}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                 </li>
             </ul>
         </li>
@@ -38,7 +38,7 @@
                 <a href="{{ route('admin.dashboard.index') }}"><i class="fa fa-fw fa-dashboard"></i> 主控台</a>
             </li>
             <li>
-                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 文章管理</a>
+                <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 商品管理</a>
             </li>
         </ul>
     </div>

@@ -8,11 +8,11 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                新增管理員 <small>請輸入管理員內容</small>
+                新增商品 <small>請輸入商品內容</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-edit"></i> 管理員管理
+                    <i class="fa fa-edit"></i> 商品管理
                 </li>
             </ol>
         </div>
@@ -28,7 +28,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">標題：</label>
-                    <input id="title" name="title" class="form-control" value="{{ old('title') }}" placeholder="請輸入管理員">
+                    <input id="title" name="title" class="form-control" value="{{ old('title') }}" placeholder="請輸入商品名稱">
                 </div>
 
                 <div class="form-group">
