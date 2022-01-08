@@ -46,10 +46,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        $individual_product = Product::find($product);
+        $individual_product = Product::where('id','=',$id)->first();
         $data = ['individual_product' => $individual_product];
+
         return view('products.index',$data);
     }
 
@@ -93,6 +94,7 @@ class ProductController extends Controller
         $search_records = Product::where('name','like','%'.$search_text.'%')->count();
         $searches = Product::orderby('price','DESC')->where('name','like','%'.$search_text.'%')->get();
         $data = ['searches' => $searches, 'search_records' => $search_records];
+
         return view('products.search',$data);
     }
 
