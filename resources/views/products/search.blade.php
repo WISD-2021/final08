@@ -64,13 +64,15 @@
             @foreach($searches as $search)
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="{{ asset('img/products/GTX-1650.jpg') }}">
+                    <img src="{{ $search->photo }}">
                     <div class="caption" align="center">
                         <h3>{{ $search->name }} </h3>
                         <p>{{ $search->detail }}</p>
-                        <button type="submit" name="product" class="product">
-                            查看產品
-                        </button>
+                        <form action="/search" role="search" method="GET">
+                            @method('GET')
+                            @csrf
+                            <button type="submit" name="product" class="product">查看產品</button>
+                        </form>
                     </div>
                 </div>
             </div>
