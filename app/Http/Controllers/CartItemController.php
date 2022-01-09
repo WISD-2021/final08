@@ -23,6 +23,7 @@ class CartItemController extends Controller
             $user_id = Auth::user()->id;
             $items = Cart_item::where('user_id','=', $user_id)->get();
             $items_count = Cart_item::where('user_id','=', $user_id)->count();
+            $sumtotal = 0;
             for($i=0;$i<=$items_count-1;$i++)
             {
                 $product_name = Product::where('id','=',$items[$i]["product_id"])->pluck('name');
@@ -32,10 +33,11 @@ class CartItemController extends Controller
                 $price = $items[$i][7];
                 $qty = $items[$i]['quantity'];
                 $total[$i] = $price[0]*$qty;
+                $sumtotal = $sumtotal+$total[$i];
                 $items[$i][8] = $total[$i];
             }
             $user_name = Auth::user()->name;
-            $data = ['items' => $items, 'user_name' => $user_name];
+            $data = ['items' => $items, 'user_name' => $user_name, 'sumtotal' => $sumtotal];
             return view('products.cart_item',$data);
         }
     }
@@ -107,7 +109,7 @@ class CartItemController extends Controller
      * @param  \App\Models\Cart_item  $cart_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cart_item $cart_item)
+    public function edit($id)
     {
         //
     }
@@ -119,9 +121,15 @@ class CartItemController extends Controller
      * @param  \App\Models\Cart_item  $cart_item
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCart_itemRequest $request, Cart_item $cart_item)
+    public function update(Request $request,$id)
     {
-        //
+        $item = Cart_item::find($id);
+
+        $quantity = $request->quantity;
+
+        $item->update(['quantity' => $quantity]);
+
+        return redirect()->route('cart_items.index');
     }
 
     /**
@@ -130,8 +138,9 @@ class CartItemController extends Controller
      * @param  \App\Models\Cart_item  $cart_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart_item $cart_item)
+    public function destroy($id)
     {
-        //
+        Cart_item::destroy($id);
+        return redirect()->route('cart_items.index');
     }
 }

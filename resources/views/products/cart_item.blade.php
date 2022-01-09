@@ -107,15 +107,23 @@
                                     <font>{{ $item[7] }}</font>
                                 </td>
                                 <td class="td">
-                                    <font>{{ $item['quantity'] }}</font>
-                                    <input type="text" name="switch" class="qty">
-                                    <input type="submit" name="switch-modify" class="modify" value="修改">
+                                    <form action="{{ route('cart_items.update', $item->id) }}" role="button" method="POST">
+                                        @method('PATCH')
+                                        @csrf
+                                        <font>{{ $item['quantity'] }}</font>
+                                        <input type="text" name="quantity" class="qty">
+                                        <input type="submit" name="switch-modify" class="modify" value="修改">
+                                    </form>
                                 </td>
                                 <td class="td">{{ $item[8] }}</td>
                                 <td class="text-center">
-                                    <button type="submit" name="$id" class="delete">
-                                        <span class="glyphicon glyphicon-remove"></span>
-                                    </button>
+                                    <form action="{{ route('cart_items.destroy', $item->id) }}" role="button" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" name="delete" class="delete">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -126,7 +134,7 @@
             <p class="text03">訂單摘要</p><br>
             <hr>
             <p class="text04">商品總計</p>
-            <p>$$sum</p><br>
+            <p>{{ $sumtotal }}</p><br>
             <button type="submit" name="buy01" class="buy">
                 <span class="glyphicon glyphicon-shopping-cart"></span> 購買
             </button>
