@@ -25,7 +25,7 @@ use App\Http\Controllers\LoginController;
 
     Route::get('/',[HomeController::class, "index"])->name("home.index");
 
-//主樣板
+
 Route::prefix('home')->group(function () {
     Route::get('/',[LoginController::class, "index"])->name("login.index");
     Route::get('logout',[LoginController::class, 'logout'])->name('login.logout');
