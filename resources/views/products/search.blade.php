@@ -45,7 +45,7 @@
         </div>
         <div class="row">
             <br><br><br><br><br><br><br>
-            <form action="/search" role="search" method="GET">
+            <form action="{{ route('products.search') }}" role="search" method="GET">
                 @method('GET')
                 @csrf
                 <div class="from-group has-feedback">

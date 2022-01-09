@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">   <!--navbar-fixed-top:將導覽列固定在最上面-->
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="{{  url('/') }}" class="navbar-brand">
+            <a href="{{  route('login.index') }}" class="navbar-brand">
                 <img src="{{ asset('img/brand.png') }}" width="30px" alt="">
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -14,10 +14,10 @@
         <div id="navbar" class="navbar-collapse collapes">
             <ul class="nav navbar-nav navbar-right">   <!--navbar-right:導覽列置右-->
                 <li class="active">
-                    <a href="{{ url('/') }}">首頁</a>
+                    <a href="{{ route('login.index') }}">首頁</a>
                 </li>
                 <li>
-                    <form action="/search" role="search" method="GET">
+                    <form action="{{ route('products.search') }}" role="search" method="GET">
                         @method('GET')
                         @csrf
                         <div class="search">
@@ -45,7 +45,7 @@
                         <a href="{{ route('home.index') }}" class="glyphicon glyphicon-user">個人資料</a>
                     </li>
                     <li>
-                        <a href="{{ route('home.logout') }}" class="glyphicon glyphicon-log-out">登出</a>
+                        <a href="{{ route('login.logout') }}" class="glyphicon glyphicon-log-out">登出</a>
                     </li>
                     <p class="navbar-text">歡迎，使用者{{ Auth::user()->name }}</p>
                 @endif

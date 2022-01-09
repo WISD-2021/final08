@@ -10,6 +10,7 @@ use App\Http\Controllers\RecordsController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,18 +22,17 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home.index');
-});
+
+    Route::get('/',[HomeController::class, "index"])->name("home.index");
 
 //主樣板
 Route::prefix('home')->group(function () {
-    Route::get('/',[HomeController::class, "index"])->name("home.index");
-    Route::get('logout',[HomeController::class, 'logout'])->name('home.logout');
+    Route::get('/',[LoginController::class, "index"])->name("login.index");
+    Route::get('logout',[LoginController::class, 'logout'])->name('login.logout');
 
 });
 
-Route::get('search',[ProductController::class, "search"])->name("search");
+Route::get('search',[ProductController::class, "search"])->name("products.search");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
