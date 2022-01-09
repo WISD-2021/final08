@@ -22,7 +22,7 @@
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
-        <form action="/admin/posts" method="POST" role="form">
+        <form action="/admin/products" method="POST" role="form">
             {{ csrf_field() }}
                 <div class="form-group">
                     <label>商品名稱：</label>

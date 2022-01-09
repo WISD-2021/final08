@@ -37,7 +37,7 @@
                         <th width="200" style="text-align: center">價格</th>
                         <th width="600" style="text-align: center">內容</th>
                         <th width="200" style="text-align: center">商品圖片</th>
-                        <th width="200" style="text-align: center">修改商品</th>
+                        <th width="200" style="text-align: center">管理</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -47,7 +47,7 @@
                                 {{$product ->id}}</td>
                             <td>{{$product ->name}}</td>
                             <td style="text-align: center">
-                                {{$product ->invent}}</td>
+                                {{$product->invent}}</td>
                             <td style="text-align: center">
                                 {{$product->price}}</td>
                             <td style="text-align: center">

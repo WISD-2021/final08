@@ -25,14 +25,14 @@ class AdminPostsController extends Controller
     public function edit ($id)
     {
         $products=Product::find($id);
-        $data=['post'=>$products];
+        $data=['products'=>$products];
         return view('admin.posts.edit',$data);
     }
 
     public function update(PostRequest $request,$id)
     {
-        $products=Product::find($id);
-        $products->update($request->all());
+        $product=Product::find($id);
+        $product->update($request->all());
         return redirect()->route('admin.posts.index');
     }
     public function destroy($id)

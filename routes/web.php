@@ -54,11 +54,11 @@ Route::resource('products',ProductController::class);
 //後台
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
-    Route::get('product', [AdminPostsController::class, 'index'])->name('admin.posts.index');
-    Route::get('product/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
-    Route::get('product/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
-    Route::post('product', [AdminPostsController::class, 'store'])->name('admin.posts.store');
-    Route::patch('product/{post}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
-    Route::delete('product/{post}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
+    Route::get('products', [AdminPostsController::class, 'index'])->name('admin.posts.index');
+    Route::get('products/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
+    Route::get('products/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+    Route::post('products', [AdminPostsController::class, 'store'])->name('admin.posts.store');
+    Route::patch('products/{id}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
+    Route::delete('products/{id}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
 });
 

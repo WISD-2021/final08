@@ -25,12 +25,10 @@ class PostRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'gender'=>'required|boolean',
-            'birthday'=>'required',
-            'id_number'=>'required',
-            'phone'=>'required',
-            'email'=>'required',
-            'password'=>'required',
+            'invent'=>'required',
+            'price'=>'required',
+            'detail'=>'required',
+            'photo'=>'required',
         ];
     }
 }
