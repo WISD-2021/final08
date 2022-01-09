@@ -148,7 +148,11 @@
         <div class="nobuy">
             <img src="{{ asset('img/cart_item_icon.png') }}">
             <p>您的購物車目前沒有任何商品，快來挑選一些商品吧！</p><br>
-            <button type="submit" name="buy02" class="buy">回到首頁</button>
+            <form action="{{ route('login.index') }}" role="button" method="GET">
+                @method('GET')
+                @csrf
+                <button type="submit" name="buy02" class="buy">回到首頁</button>
+            </form>
         </div>
     </div>
     @endif
