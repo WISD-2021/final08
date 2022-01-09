@@ -59,9 +59,6 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function Records(){
-        return $this->hasMany(Record::class);
-    }
 
     public function orders(){
         return $this->hasMany(Order::class);
