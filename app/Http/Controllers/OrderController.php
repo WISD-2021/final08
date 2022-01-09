@@ -97,9 +97,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update(UpdateOrderRequest $request,$id)
     {
-        //
+        $order=Order::find($id);
+        $order->update($request->all());
+        return redirect()->route('admin.orders.index');
     }
 
     /**

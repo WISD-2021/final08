@@ -43,7 +43,7 @@
                                     {{$order ->status}}</td>
                                 <td style="text-align: center">
                                 <td style="text-align: center">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.orders.update', $order ->id) }}">處理訂單</a>
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.orders.index', $order ->id) }}">處理訂單</a>
                                     /
                                     <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" style="display: inline">
                                         @method('DELETE')
