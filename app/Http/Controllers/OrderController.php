@@ -42,6 +42,12 @@ class OrderController extends Controller
                     'product_id' => $items[$i]["product_id"],
                     'quantity' => $items[$i]["quantity"],
                 ]);
+                Cart_item::destroy($items[$i]["id"]);
+
+                $product = Product::find($items[$i]["product_id"]);
+                $invent = Product::where('id','=', $items[$i]["product_id"])->pluck('invent');
+                $new_invent = $invent[0]-$items[$i]['quantity'];
+                $product->update(['invent' => $new_invent]);
             }
             return redirect()->route('login.index');
         }
