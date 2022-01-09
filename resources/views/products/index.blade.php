@@ -47,9 +47,13 @@
         <p>&ensp;</p><br>
         <p>{{ $individual_product->detail }}<p><br>
         <hr>
-        <button type="submit" name="buy" class="buy">
-            <span class="glyphicon glyphicon-shopping-cart"></span> 購買
-        </button>
+        <form action="{{ route('cart_items.create', $individual_product->id) }}" role="button" method="GET">
+            @method('GET')
+            @csrf
+            <button type="submit" name="buy" class="buy">
+                <span class="glyphicon glyphicon-shopping-cart"></span> 購買
+            </button>
+        </form>
     </div>
 
 

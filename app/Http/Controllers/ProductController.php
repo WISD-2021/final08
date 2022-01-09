@@ -48,7 +48,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $individual_product = Product::where('id','=',$id)->first();
+        $individual_product = Product::find($id);
         $data = ['individual_product' => $individual_product];
 
         return view('products.index',$data);

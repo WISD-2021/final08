@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\RecordsController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
@@ -23,7 +22,7 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-    Route::get('/',[HomeController::class, "index"])->name("home.index");
+Route::get('/',[HomeController::class, "index"])->name("home.index");
 
 
 Route::prefix('home')->group(function () {
@@ -38,14 +37,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
 Route::resource('orders', OrderController::class);
 
 Route::resource('users', UserController::class);
 
-Route::resource('records',RecordsController::class);
-
 Route::resource('cart_items',CartItemController::class);
+
+Route::get('/cart_item/create/{id}',[CartItemController::class,"create"])->name("cart_items.create");
 
 Route::resource('products',ProductController::class);
 
