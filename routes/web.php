@@ -39,11 +39,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('employees',EmployeeController::class);
 
 Route::resource('orders', OrderController::class);
 
-Route::resource('customers',CustomerController::class);
 
 Route::resource('records',RecordsController::class);
 
