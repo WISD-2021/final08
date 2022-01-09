@@ -56,5 +56,8 @@ Route::prefix('admin')->group(function () {
     Route::post('products', [AdminPostsController::class, 'store'])->name('admin.posts.store');
     Route::patch('products/{id}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
     Route::delete('products/{id}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
+    Route::get('users', [UserController::class, 'index'])->name('admin.users.index');
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
 });
+
 
