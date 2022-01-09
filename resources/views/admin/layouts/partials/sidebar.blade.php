@@ -38,7 +38,7 @@
                 <a href="{{ route('admin.dashboard.index') }}"><i class="fa fa-fw fa-dashboard"></i> 主控台</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-edit"></i> 管理員管理</a>
+                <a href="{{ route('admin.employees.index') }}"><i class="fa fa-fw fa-edit"></i> 管理員管理</a>
             </li>
             <li>
                 <a href="{{ route('admin.users.index') }}"><i class="fa fa-fw fa-edit"></i> 使用者管理</a>

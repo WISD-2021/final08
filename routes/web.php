@@ -10,7 +10,7 @@ use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,14 +50,23 @@ Route::resource('products',ProductController::class);
 //後台
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
+    //商品管理
     Route::get('products', [AdminPostsController::class, 'index'])->name('admin.posts.index');
     Route::get('products/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
     Route::get('products/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
     Route::post('products', [AdminPostsController::class, 'store'])->name('admin.posts.store');
     Route::patch('products/{id}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
     Route::delete('products/{id}', [AdminPostsController::class, 'destroy'])->name('admin.posts.destroy');
+    //使用者管理
     Route::get('users', [UserController::class, 'index'])->name('admin.users.index');
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    //管理者管理
+    Route::get('employees', [EmployeeController::class, 'index'])->name('admin.employees.index');
+    Route::get('employees/create', [EmployeeController::class, 'create'])->name('admin.employees.create');
+    Route::get('employees/{id}/edit', [EmployeeController::class, 'edit'])->name('admin.employees.edit');
+    Route::post('employees', [EmployeeController::class, 'store'])->name('admin.employees.store');
+    Route::patch('employees/{id}', [EmployeeController::class, 'update'])->name('admin.employees.update');
+    Route::delete('employees/{id}', [EmployeeController::class, 'destroy'])->name('admin.employees.destroy');
 });
 
 
