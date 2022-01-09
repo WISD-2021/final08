@@ -40,6 +40,10 @@ class CartItemController extends Controller
             $data = ['items' => $items, 'user_name' => $user_name, 'sumtotal' => $sumtotal];
             return view('products.cart_item',$data);
         }
+        else
+        {
+            return redirect()->route('login.index');
+        }
     }
 
     /**
@@ -76,7 +80,7 @@ class CartItemController extends Controller
         }
         else
         {
-            return redirect('/');
+            return redirect()->route('login.index');
         }
     }
 

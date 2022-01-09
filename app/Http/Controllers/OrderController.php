@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart_item;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -25,7 +28,24 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::check())
+        {
+            $user_id = Auth::user()->id;
+            $items = Cart_item::where('user_id','=', $user_id)->get();
+            $items_count = Cart_item::where('user_id','=', $user_id)->count();
+            for($i=0;$i<=$items_count-1;$i++)
+            {
+                Order::create([
+                    'user_id' => $user_id,
+                    'product_id' => $items[$i]["product_id"],
+                ]);
+            }
+            return redirect()->route('login.index');
+        }
+        else
+        {
+            return redirect()->route('login.index');
+        }
     }
 
     /**

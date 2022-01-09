@@ -135,9 +135,13 @@
             <hr>
             <p class="text04">商品總計</p>
             <p>{{ $sumtotal }}</p><br>
-            <button type="submit" name="buy01" class="buy">
-                <span class="glyphicon glyphicon-shopping-cart"></span> 購買
-            </button>
+                    <form action="{{ route('orders.create') }}" role="button" method="GET">
+                        @method('GET')
+                        @csrf
+                        <button type="submit" name="buy01" class="buy">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> 購買
+                        </button>
+                    </form>
         </div>
     </div>
     @else
