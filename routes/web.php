@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPostsController;
-use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecordsController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProductController;
@@ -42,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::resource('orders', OrderController::class);
 
+Route::resource('users', UserController::class);
 
 Route::resource('records',RecordsController::class);
 
