@@ -10,7 +10,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        //
+        $users=User::orderBy('created_at', 'ASC')->get();
+        $data=['users'=>$users];
+        return view('admin.users.index', $data);
     }
 
     public function create()
@@ -35,6 +37,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->route('admin.users.index');
     }
 }
