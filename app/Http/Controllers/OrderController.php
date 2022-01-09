@@ -38,6 +38,7 @@ class OrderController extends Controller
                 Order::create([
                     'user_id' => $user_id,
                     'product_id' => $items[$i]["product_id"],
+                    'quantity' => $items[$i]["quantity"],
                 ]);
             }
             return redirect()->route('login.index');
