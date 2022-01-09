@@ -83,45 +83,42 @@
 @section('content')
 
     @if(count($items) > 0)
-    <div class="container">
-        <div class="text">
-            <a href="javascript:history.back()" class="glyphicon glyphicon-chevron-left">繼續購物</a><br>
-            <p class="text01">您的購物車</p><br>
-            <p class="text02">$userid，歡迎來到購物車系統!</p><br>
-            <div class="container table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                    <th class="text-center">商品資訊</th>
-                    <th class="text-center">單價</th>
-                    <th class="text-center">數量</th>
-                    <th class="text-center">小計</th>
-                    <th class="text-center">刪除</th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="td">
-                            <font>$product</font>
-                            <input type="text" name="ps5" class="qty">
-                            <input type="submit" name="ps5-modify" class="modify" value="修改">
-                        </td>
-                        <td class="td">
-                            <font>$product</font>
-                            <input type="text" name="xbox" class="qty">
-                            <input type="submit" name="xbox-modify" class="modify" value="修改">
-                        </td>
-                        <td class="td">
-                            <font>$product</font>
-                            <input type="text" name="switch" class="qty">
-                            <input type="submit" name="switch-modify" class="modify" value="修改">
-                        </td>
-                        <td class="td">$product</td>
-                        <td class="td">$total</td>
-                        <td class="text-center">
-                            <button type="submit" name="$id" class="delete">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </td>
-                    </tr>
+        <div class="container">
+                <div class="text">
+                    <a href="javascript:history.back()" class="glyphicon glyphicon-chevron-left">繼續購物</a><br>
+                    <p class="text01">您的購物車</p><br>
+                    <p class="text02">{{ $user_name }}，歡迎來到購物車系統!</p><br>
+                        <div class="container table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <th class="text-center">商品資訊</th>
+                                <th class="text-center">單價</th>
+                                <th class="text-center">數量</th>
+                                <th class="text-center">小計</th>
+                                <th class="text-center">刪除</th>
+                                </thead>
+                            <tbody>
+                            <tr>
+                                @foreach($items as $item)
+                                <td class="td">
+                                 <font>{{ $item[6] }}</font>
+                                </td>
+                                <td class="td">
+                                    <font>{{ $item[7] }}</font>
+                                </td>
+                                <td class="td">
+                                    <font>{{ $item['quantity'] }}</font>
+                                    <input type="text" name="switch" class="qty">
+                                    <input type="submit" name="switch-modify" class="modify" value="修改">
+                                </td>
+                                <td class="td">{{ $item[8] }}</td>
+                                <td class="text-center">
+                                    <button type="submit" name="$id" class="delete">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
                     </tbody>
                 </table>
             </div>
