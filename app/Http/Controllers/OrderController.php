@@ -33,23 +33,31 @@ class OrderController extends Controller
         if(Auth::check())
         {
             $user_id = Auth::user()->id;
-            $items = Cart_item::where('user_id','=', $user_id)->get();
-            $items_count = Cart_item::where('user_id','=', $user_id)->count();
-            for($i=0;$i<=$items_count-1;$i++)
+            $cart_item_user_id=Cart_item::where('user_id','=',$user_id)->count();
+            if($cart_item_user_id > 0)
             {
-                Order::create([
-                    'user_id' => $user_id,
-                    'product_id' => $items[$i]["product_id"],
-                    'quantity' => $items[$i]["quantity"],
-                ]);
-                Cart_item::destroy($items[$i]["id"]);
+                $items = Cart_item::where('user_id','=', $user_id)->get();
+                $items_count = Cart_item::where('user_id','=', $user_id)->count();
+                for($i=0;$i<=$items_count-1;$i++)
+                {
+                    Order::create([
+                        'user_id' => $user_id,
+                        'product_id' => $items[$i]["product_id"],
+                        'quantity' => $items[$i]["quantity"],
+                    ]);
+                    Cart_item::destroy($items[$i]["id"]);
 
-                $product = Product::find($items[$i]["product_id"]);
-                $invent = Product::where('id','=', $items[$i]["product_id"])->pluck('invent');
-                $new_invent = $invent[0]-$items[$i]['quantity'];
-                $product->update(['invent' => $new_invent]);
+                    $product = Product::find($items[$i]["product_id"]);
+                    $invent = Product::where('id','=', $items[$i]["product_id"])->pluck('invent');
+                    $new_invent = $invent[0]-$items[$i]['quantity'];
+                    $product->update(['invent' => $new_invent]);
+                }
+                return redirect()->route('login.index');
             }
-            return redirect()->route('login.index');
+            else
+            {
+                return redirect()->route('login.index');
+            }
         }
         else
         {
