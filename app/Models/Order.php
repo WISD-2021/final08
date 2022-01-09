@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Employee;
+use app\Models\User;
 
 class Order extends Model
 {
@@ -14,7 +14,7 @@ class Order extends Model
         'status',
     ];
 
-    public function employee(){
-        return $this->belongsTo(Employee::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

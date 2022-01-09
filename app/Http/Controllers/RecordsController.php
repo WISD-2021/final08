@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\records;
 use App\Http\Requests\StorerecordsRequest;
 use App\Http\Requests\UpdaterecordsRequest;
+use App\Models\User;
 
 class RecordsController extends Controller
 {
@@ -82,5 +83,9 @@ class RecordsController extends Controller
     public function destroy(records $records)
     {
         //
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }
