@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\User;
+use App\Models\User;
+use App\Models\Product;
 
 class Order extends Model
 {
@@ -14,8 +15,14 @@ class Order extends Model
         'status',
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 
 }
