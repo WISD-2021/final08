@@ -39,7 +39,7 @@
                     </li>
                 @else
                     <li>
-                        <a href="{{ route('home.index') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
+                        <a href="{{ route('cart_items.index') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
                     </li>
                     <li>
                         <a href="{{ route('home.index') }}" class="glyphicon glyphicon-user">個人資料</a>
