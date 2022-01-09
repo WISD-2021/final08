@@ -32,6 +32,7 @@
                     </thead>
                     <tbody>
                     @foreach($users as $user)
+                        @if($user->type == "0")
                         <tr>
                             <td style="text-align: center">
                                 {{$user ->id}}</td>
@@ -47,6 +48,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>

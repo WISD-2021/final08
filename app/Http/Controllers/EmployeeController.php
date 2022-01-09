@@ -10,9 +10,10 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $users=User::orderBy('created_at', 'ASC')->get();
-        $data=['users'=>$users];
-        return view('admin.users.index', $data);
+        $employees=User::orderBy('id', 'ASC')->get();
+        $users=User::all();
+        $data=['employees'=>$employees,'users'=>$users];
+        return view('admin.employees.index',$data);
     }
 
     public function create()
@@ -22,8 +23,8 @@ class EmployeeController extends Controller
 
     public function edit($id)
     {
-        $empolyees=User::find($id);
-        $data=['employees'=>$empolyees];
+        $users=User::find($id);
+        $data=['users'=>$users];
         return view('admin.employees.edit',$data);
     }
 
@@ -35,15 +36,15 @@ class EmployeeController extends Controller
 
     public function update(UserRequest $request, $id)
     {
-        $product=User::find($id);
-        $product->update($request->all());
+        $users=User::find($id);
+        $users->update($request->all());
         return redirect()->route('admin.employees.index');
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.employees.index');
     }
 
 }

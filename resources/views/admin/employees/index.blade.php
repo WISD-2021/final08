@@ -31,40 +31,34 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th width="30" style="text-align: center">#</th>
-                        <th width="200" style="text-align: center">商品名稱</th>
-                        <th width="200" style="text-align: center">數量</th>
-                        <th width="200" style="text-align: center">價格</th>
-                        <th width="600" style="text-align: center">內容</th>
-                        <th width="200" style="text-align: center">商品圖片</th>
+                        <th width="150" style="text-align: center">使用者編號</th>
+                        <th width="200" style="text-align: center">姓名</th>
+                        <th width="300" style="text-align: center">信箱</th>
+                        <th width="300" style="text-align: center">密碼</th>
                         <th width="200" style="text-align: center">管理</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($products as $product)
-                        <tr>
+                        @foreach($users as $user)
+                            @if($user->type == "1")
+                            <tr>
+                                <td style="text-align: center">
+                                    {{$user ->id}}</td>
+                                <td>{{$user  ->name}}</td>
+                                <td style="text-align: center">
+                                    {{$user ->email}}</td>
+                                <td>{{$user ->password}}</td>
                             <td style="text-align: center">
-                                {{$product ->id}}</td>
-                            <td>{{$product ->name}}</td>
-                            <td style="text-align: center">
-                                {{$product->invent}}</td>
-                            <td style="text-align: center">
-                                {{$product->price}}</td>
-                            <td style="text-align: center">
-                                {{$product->detail}}</td>
-                            <td style="text-align: center">
-                                {{$product->photo}}</td>
-                            <td style="text-align: center">
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $product->id) }}">編輯</a>
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.employees.edit', $user ->id) }}">編輯</a>
                                 /
-                                <form action="{{ route('admin.posts.destroy', $product->id) }}" method="POST" style="display: inline">
+                                <form action="{{ route('admin.employees.destroy', $user ->id) }}" method="POST" style="display: inline">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-sm btn-danger" type="submit">刪除</button>
                                 </form>
                             </td>
                         </tr>
-
+                            @endif
                     @endforeach
                     </tbody>
                 </table>
