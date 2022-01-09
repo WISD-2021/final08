@@ -42,10 +42,13 @@
                                 <td style="text-align: center">
                                     {{$order ->status}}</td>
                                 <td style="text-align: center">
+                                <td style="text-align: center">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.orders.update', $order ->id) }}">處理訂單</a>
+                                    /
                                     <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" style="display: inline">
                                         @method('DELETE')
                                         @csrf
-                                        <button class="btn btn-sm btn-danger" type="submit">刪除</button>
+                                        <button class="btn btn-sm btn-danger" type="submit">刪除訂單</button>
                                     </form>
                                 </td>
                             </tr>
