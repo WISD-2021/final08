@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label>圖片：</label>
-                    <input name="photo" class="form-control" value="{{$products->photo}}">
+                    <img src="{{ asset($products->photo) }}">
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success" style="background-color: #6f42c1;border-color: #6f42c1">更新</button>

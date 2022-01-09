@@ -37,7 +37,7 @@
                         <th width="200" style="text-align: center">價格</th>
                         <th width="600" style="text-align: center">內容</th>
                         <th width="200" style="text-align: center">商品圖片</th>
-                        <th width="200" style="text-align: center">管理</th>
+                        <th width="300" style="text-align: center">管理</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -53,7 +53,7 @@
                             <td style="text-align: center">
                                 {{$product->detail}}</td>
                             <td style="text-align: center">
-                                {{$product->photo}}</td>
+                                <img src="{{ asset($product->photo) }}">
                             <td style="text-align: center">
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $product->id) }}">編輯</a>
                                 /
