@@ -67,6 +67,9 @@ Route::prefix('admin')->group(function () {
     Route::post('employees', [EmployeeController::class, 'store'])->name('admin.employees.store');
     Route::patch('employees/{id}', [EmployeeController::class, 'update'])->name('admin.employees.update');
     Route::delete('employees/{id}', [EmployeeController::class, 'destroy'])->name('admin.employees.destroy');
+    //訂單管理
+    Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
+    Route::delete('orders/{id}', [OrderController::class, 'destroy'])->name('admin.orders.destroy');
 });
 
 

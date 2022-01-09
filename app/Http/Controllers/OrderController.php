@@ -18,7 +18,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders=Order::orderBy('created_at', 'ASC')->get();
+        $data=['orders'=>$orders];
+        return view('admin.orders.index', $data);
     }
 
     /**
@@ -106,8 +108,9 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        Order::destroy($id);
+        return redirect()->route('admin.orders.index');
     }
 }
