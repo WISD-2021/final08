@@ -50,7 +50,7 @@ class ProductController extends Controller
     {
         $individual_product = Product::find($id);
         $data = ['individual_product' => $individual_product];
-
+        
         return view('products.index',$data);
     }
 

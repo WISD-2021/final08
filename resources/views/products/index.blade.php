@@ -47,6 +47,7 @@
         <p>&ensp;</p><br>
         <p>{{ $individual_product->detail }}<p><br>
         <hr>
+        @if($individual_product['invent']>0)
         <form action="{{ route('cart_items.create', $individual_product->id) }}" role="button" method="GET">
             @method('GET')
             @csrf
@@ -54,6 +55,11 @@
                 <span class="glyphicon glyphicon-shopping-cart"></span> 購買
             </button>
         </form>
+        @else
+            <button type="submit" name="buy" class="buy">
+                <span class="glyphicon glyphicon-exclamation-sign" disabled="disabled"></span> 缺貨中....
+            </button>
+        @endif
     </div>
 
 
