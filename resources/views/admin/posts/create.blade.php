@@ -26,23 +26,23 @@
             {{ csrf_field() }}
                 <div class="form-group">
                     <label>商品名稱：</label>
-                    <input name="name" class="form-control" placeholder="請輸入商品名稱" value="{{$product->name}}">
+                    <input name="name" class="form-control" placeholder="請輸入商品名稱">
                 </div>
                 <div class="form-group">
                     <label>商品數量：</label>
-                    <input name="invent" class="form-control" placeholder="請輸入商品數量" value="{{$product->invent}}">
+                    <input name="invent" class="form-control" placeholder="請輸入商品數量">
                 </div>
                 <div class="form-group">
                     <label>商品價格：</label>
-                    <input name="price" class="form-control" placeholder="請輸入商品價格" value="{{$product->price}}">
+                    <input name="price" class="form-control" placeholder="請輸入商品價格">
                 </div>
                 <div class="form-group">
                     <label>商品內容：</label>
-                    <input name="detail" class="form-control" placeholder="請輸入商品內容" value="{{$product->detail}}">
+                    <input name="detail" class="form-control" placeholder="請輸入商品內容">
                 </div>
                 <div class="form-group">
                     <label>圖片：</label>
-                    <input name="photo" class="form-control" value="{{$product->photo}}">
+                    <input name="photo" class="form-control">
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success" style="background-color: #6f42c1;border-color: #6f42c1">建立</button>
