@@ -26,18 +26,23 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>管理員名稱：</label>
-                    <input name="name" class="form-control">
+                    <input name="name" type="text" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>信箱：</label>
-                    <input name="email" class="form-control">
+                    <input name="email" type="email" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>密碼：</label>
-                    <input name="password" class="form-control">
+                    <input name="password" type="password" class="form-control" required autocomplete="new-password">
                 </div>
                 <div class="form-group">
-                    <input type="" name="type" class="form-control" value="1">
+                    <label>確認密碼：</label>
+                    <input name="password_confirmation" type="password" class="form-control" required autocomplete="new-password" >
+                </div>
+                <div class="form-group">
+                    <label>身分別為員工</label>
+                    <input type="" name="type" class="form-control" value="1" readonly="readonly">
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success" style="background-color: #6f42c1;border-color: #6f42c1">建立</button>

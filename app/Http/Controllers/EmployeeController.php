@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Laravel\Fortify\Rules\Password;
+use Laravel\Jetstream\Jetstream;
 
 class EmployeeController extends Controller
 {
@@ -30,8 +34,14 @@ class EmployeeController extends Controller
 
     public function store(UserRequest $request)
     {
-        User::create($request->all());
-        return redirect()->route('admin.employees.index');
+
+            User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'type' => 1,
+            ]);
+            return redirect()->route('admin.employees.index');
     }
 
     public function update(UserRequest $request, $id)
@@ -45,6 +55,11 @@ class EmployeeController extends Controller
     {
         User::destroy($id);
         return redirect()->route('admin.employees.index');
+    }
+
+    private function passwordRules()
+    {
+        return ['required', 'string', new Password, 'confirmed'];
     }
 
 }
