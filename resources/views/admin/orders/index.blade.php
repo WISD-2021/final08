@@ -27,7 +27,7 @@
                         <th width="200" style="text-align: center">使用者編號</th>
                         <th width="300" style="text-align: center">產品編號</th>
                         <th width="300" style="text-align: center">狀態</th>
-                        <th width="100" style="text-align: center">管理</th>
+                        <th width="200" style="text-align: center">管理</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,6 @@
                                     {{$order->product_id}}</td>
                                 <td style="text-align: center">
                                     {{$order ->status}}</td>
-                                <td style="text-align: center">
                                 <td style="text-align: center">
                                     <a class="btn btn-sm btn-primary" href="{{ route('admin.orders.index', $order ->id) }}">處理訂單</a>
                                     /
