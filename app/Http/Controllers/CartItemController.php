@@ -38,7 +38,7 @@ class CartItemController extends Controller
             }
             $user_name = Auth::user()->name;
             $data = ['items' => $items, 'user_name' => $user_name, 'sumtotal' => $sumtotal];
-            return view('products.cart_item',$data);
+            return view('home.cart_item',$data);
         }
         else
         {

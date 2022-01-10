@@ -42,7 +42,7 @@
                         <a href="{{ route('cart_items.index') }}" class="glyphicon glyphicon-shopping-cart">購物車</a>
                     </li>
                     <li>
-                        <a href="{{ route('home.index') }}" class="glyphicon glyphicon-user">個人資料</a>
+                        <a href="{{ route('users.user_information') }}" class="glyphicon glyphicon-user">個人資料</a>
                     </li>
                     <li>
                         <a href="{{ route('login.logout') }}" class="glyphicon glyphicon-log-out">登出</a>

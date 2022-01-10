@@ -41,6 +41,10 @@ Route::resource('orders', OrderController::class);
 
 Route::resource('users', UserController::class);
 
+Route::get('user_information',[UserController::class, "show"])->name("users.user_information");
+Route::get('user_information_edit/{id}/edit', [UserController::class, 'user_information_edit'])->name('users.user_information_edit');
+Route::patch('user_information/{id}', [UserController::class, 'user_information_update'])->name('users.user_information_update');
+
 Route::resource('cart_items',CartItemController::class);
 
 Route::get('/cart_item/create/{id}',[CartItemController::class,"create"])->name("cart_items.create");

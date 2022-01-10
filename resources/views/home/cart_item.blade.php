@@ -77,6 +77,11 @@
             color:white;
             font-family:"微軟正黑體";
         }
+        wrap {
+            min-height:100%;
+            *display:table; /* For IE7 Hack */
+            *height:100%; /* For IE7 Hack */
+        }
     </style>
 </head>
 

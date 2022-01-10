@@ -57,9 +57,5 @@ class EmployeeController extends Controller
         return redirect()->route('admin.employees.index');
     }
 
-    private function passwordRules()
-    {
-        return ['required', 'string', new Password, 'confirmed'];
-    }
 
 }

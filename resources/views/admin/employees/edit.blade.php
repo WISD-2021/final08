@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label>密碼：</label>
-                    <input name="price" class="form-control" value="">
+                    <input name="price" class="form-control" value="{{$users->password}}">
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success" style="background-color: #6f42c1;border-color: #6f42c1">更新</button>
