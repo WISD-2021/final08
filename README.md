@@ -73,9 +73,10 @@
 - 修改個人資料 (Route::patch('user_information/{id}', [UserController::class, 'user_information_update'])->name('users.user_information_update');) [3A832063 林冠宇](https://github.com/3A832063)
 
 ★ 後台
-- 會員管理 (Route::get('members', [AdminMemberController::class, 'index'])->name('admin.members.index');) [3A732087 許家銓](https://github.com/3A732087)
-- 餐點管理 (Route::get('menus', [AdminMenuController::class, 'index'])->name('admin.menus.index');) [3A732087 許家銓](https://github.com/3A732087)
-- 訂單管理 (Route::get('orderlists', [AdminOrderlistController::class, 'index'])->name('admin.orderlists.index'); ) [3A732087 許家銓](https://github.com/3A732087)
+- 員工管理 (Route::get('employees', [EmployeeController::class, 'index'])->name('admin.employees.index');) [3A832070 李承安](https://github.com/3A8320700)
+- 會員管理 (Route::get('users', [UserController::class, 'index'])->name('admin.users.index');) [3A832070 李承安](https://github.com/3A8320700)
+- 商品管理 (Route::get('products', [AdminPostsController::class, 'index'])->name('admin.posts.index');) [3A832070 李承安](https://github.com/3A8320700)
+- 訂單管理 (Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index'); ) [3A832070 李承安](https://github.com/3A8320700)
 
 ## ERD
 <a href="https://imgur.com/bHliZMm"><img src="https://imgur.com/bHliZMm.png" title="source: imgur.com" /></a>
@@ -89,32 +90,29 @@
 
 - 使用者 (users)資料表
 
-<a href="https://imgur.com/TFdhtSS"><img src="https://i.imgur.com/TFdhtSS.png" title="source: imgur.com" /></a>
+<a href="hhttps://imgur.com/7rlxmx6"><img src="https://imgur.com/7rlxmx6.png" title="source: imgur.com" /></a>
 
 - 產品 (products)資料表
 
-<a href="https://imgur.com/y5ydQrM"><img src="https://i.imgur.com/y5ydQrM.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/F1p4cvt"><img src="https://imgur.com/F1p4cvt.png" title="source: imgur.com" /></a>
 
 - 購物車 (cart_items)資料表
 
-<a href="https://imgur.com/OVpJgWw"><img src="https://i.imgur.com/OVpJgWw.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/XN6lzDB"><img src="https://imgur.com/XN6lzDB.png" title="source: imgur.com" /></a>
 
 - 訂單 (orders)資料表
 
-<a href="https://imgur.com/gtqYIdm"><img src="https://i.imgur.com/gtqYIdm.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/8Lf9jNf"><img src="https://imgur.com/8Lf9jNf.png" title="source: imgur.com" /></a>
 
 ## 初始專案與DB負責的同學
 
-- 初始專案 [3A732086 胡東霖](https://github.com/3A732086)
-- DB [3A732086 胡東霖](https://github.com/3A732086) 、 [3A732087 許家銓](https://github.com/3A732087)
+- 初始專案 [3A832070 李承安](https://github.com/3A8320700)
+- DB [3A832070 李承安](https://github.com/3A8320700) 、 [3A832063 林冠宇](https://github.com/3A832063) 、 [3A832094 曾喆聖](https://github.com/3A832094)
+- 特別感謝 古証毓、鄭義翔 協助ERD製作
 
 
 
 ## 額外使用的套件或樣板
-
-- 前台樣板：[Modern Business](https://startbootstrap.com/template/modern-business)
-
-        作為前台頁面使用，畫面簡單乾淨
 
 - 後台樣板：[Sidebar](https://startbootstrap.com/template/simple-sidebar)
 
@@ -123,39 +121,45 @@
 
 ## 系統測試資料存放位置
 
-     final11底下的sql資料夾
+     final8底下的sql資料夾
 
 ## 系統使用者測試帳號
 
 ★ 前台
 
-     帳號：aaa123123
-     密碼：aaa123123
+     帳號：55555@gmail.com
+     密碼：55555555
 
 ★ 後台
 
-     帳號：admin
-     密碼：12345678
+     帳號：a123456@yahoo.com.tw
+     密碼：aaaaaaaa
 
 
 ## 系統開發人員與工作分配
 
-[3A732086 胡東霖](https://github.com/3A732086)
+[3A832063 林冠宇](https://github.com/3A832063)
 
       前台管理
-      初始專案
+      前台購物車
       DB 
       readme 撰寫
       登入後判斷身分別進入前台或後台
-      登入頁面修改
       個人資料頁面修改
       期中報告製作
 
 
-[3A732087 許家銓](https://github.com/3A732087)
+[3A832070 李承安](https://github.com/3A8320700)
 
+      初始專案
       後台管理
-      前台購物車及訂單查詢
+      後台使用者、商品、訂單查詢
+      readme 撰寫    
       DB
       期中報告製作
-        
+
+
+[3A832094 曾喆聖](https://github.com/3A832094)
+
+      DB
+      期中報告製作
